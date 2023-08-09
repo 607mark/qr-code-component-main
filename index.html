@@ -7,10 +7,11 @@
   <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
   <link rel=stylesheet href="styles.css">
   <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;700&display=swap" rel="stylesheet">
+  <script src="https://cdn.rawgit.com/davidshimjs/qrcodejs/gh-pages/qrcode.min.js"></script>
   <title>Frontend Mentor | QR code component</title>
   </style>
 </head>
@@ -18,14 +19,46 @@
    <div class="card">
     <div id="img">
       <img src="images/image-qr-code.png">
-    </div>
-    <div id="title">
-      <h1>Improve your front-end skills by building projects</h1>
-      <div class="paragraph"><p>Scan the QR code to visit Frontend Mentor and take your coding skills to the next level</p></div>
+      
       
     </div>
+    <div id="title">
+      <h1>Generate Qr Code</h1>
+      <form>
+        <div id="inputfield">
+        <input type="url" id="website" name="website" placeholder="https://webisora.com" required />
+        <button type="button" onclick="generateQRCode()">
+          Generate
+        </button>
+      </div>
+      </form>
+    </div>
    </div>
-  
+
+
+  <script type="text/javascript">
+    function generateQRCode() {
+      let website = document.getElementById("website").value;
+      if (website) {
+        let imgEl = document.getElementById("img")
+        imgEl.innerHTML = `<div class="padding"><div id="qrcode-2" class="qrcode"></div></div>`
+        let qrcodeContainer2 = document.getElementById("qrcode-2");
+        qrcodeContainer2.innerHTML = "";
+        new QRCode(qrcodeContainer2, {
+          text: website,
+          width: 128,
+          height: 128,
+          colorDark: "#5868bf",
+          colorLight: "#ffffff",
+          correctLevel: QRCode.CorrectLevel.H
+        });
+        document.getElementById("qrcode-container").style.display = "block";
+      } else {
+        alert("Please enter a valid URL");
+      }
+    }
+  </script>
+</div>
 
   
   <!-- <div class="attribution">

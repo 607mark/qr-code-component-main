@@ -27,6 +27,7 @@ body {
 }
 
 #img {
+    border-radius: 10px;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -35,7 +36,6 @@ body {
 
 img {
     border-radius: 10px;
-    width: 300px;
 }
 
 #title {
@@ -54,7 +54,49 @@ p {
     font-size: 15px;
 }
 
-h1 {
+input {
+    width: 240px;
+    font-weight: 700;
+    border: 1px solid hsl(220, 15%, 55%);;
+    background-color: white;
+    padding: 5px 15px;
+    border-radius: 10px;
+    color: hsl(218, 44%, 22%);
+    font-size: 18px;
+}
+
+button {
+    width: max-content;
+    font-weight: 700;
+    border: 1px solid hsl(220, 15%, 55%);;
+    background-color: white;
+    padding: 5px 15px;
+    border-radius: 10px;
+    margin: 20px 0 10px 0;
     color: hsl(218, 44%, 22%);
     font-size: 22px;
 }
+
+#inputfield {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.padding {
+    width: 280px;
+    padding: 50px;
+}
+
+#qrcode-2 {
+    height: 128px;
+    width: 128px;
+}
+
+
+.qrcode{
+    height: 128px;
+    width: 128px;
+    padding: 16px;
+  }
