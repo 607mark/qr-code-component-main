@@ -27,7 +27,7 @@
       <h1>Generate Qr Code</h1>
       <form>
         <div id="inputfield">
-        <input type="url" id="website" name="website" placeholder="https://webisora.com" required />
+        <input type="url" id="website" name="website" placeholder="https://github.com" required />
         <button type="button" onclick="generateQRCode()">
           Generate
         </button>
@@ -47,8 +47,8 @@
         qrcodeContainer2.innerHTML = "";
         new QRCode(qrcodeContainer2, {
           text: website,
-          width: 128,
-          height: 128,
+          width: 180,
+          height: 180,
           colorDark: "#ffffff",
           colorLight: "#ffffff00",
           correctLevel: QRCode.CorrectLevel.H
